@@ -1,24 +1,31 @@
 {
-  "name": "passziv-profilom",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
-  }
+   "name": "passziv-profilom",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+   },
+   "dependencies": {
+      "@supabase/supabase-js": "^2.42.7",
+      "@tanstack/react-query": "^5.32.0",
+      "next": "14.2.3",
+      "react": "^18",
+      "react-dom": "^18",
+      "react-hook-form": "^7.51.3",
+      "react-hot-toast": "^2.4.1",
+      "react-icons": "^5.1.0",
+      "react-social-icons": "^6.16.0"
+   },
+   "devDependencies": {
+      "@types/node": "^20",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
+      "eslint": "^8",
+      "eslint-config-next": "14.2.3",
+      "sass": "^1.75.0",
+      "typescript": "^5"
+   }
 }

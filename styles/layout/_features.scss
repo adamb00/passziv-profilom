@@ -1,0 +1,54 @@
+.features {
+   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+      url('/bitcoin.jpg');
+   background-size: cover;
+   width: 100%;
+   padding: 15rem 0;
+   margin: 10rem 0;
+
+   transform: skewY(-7deg);
+   & > * {
+      transform: skewY(7deg);
+   }
+   @include respond(tab-port) {
+      padding: 10rem 0;
+   }
+
+   &__row {
+      display: flex;
+      gap: 3rem;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow-x: scroll;
+      padding: 0 3rem;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   &__box {
+      background-color: rgba($color-white, 0.8);
+      font-size: $default-font-size;
+      padding: 5rem 2.5rem;
+      text-align: center;
+      border-radius: 3px;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+      transition: transform 300ms;
+      min-height: 30vh;
+      min-width: 30vw;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      @include respond(tab-port) {
+         padding: 2rem;
+      }
+
+      @include respond(phone) {
+         padding: 2rem;
+         min-width: 60vw;
+      }
+   }
+}

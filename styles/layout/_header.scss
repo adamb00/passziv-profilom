@@ -1,0 +1,13 @@
+.header {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   height: 95vh;
+   width: 100vw;
+   position: absolute;
+   z-index: 999;
+   text-align: center;
+   padding: 0 0.2rem;
+   gap: 5rem;
+}

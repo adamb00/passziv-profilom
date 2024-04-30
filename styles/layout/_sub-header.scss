@@ -1,0 +1,12 @@
+.sub-header {
+   position: fixed;
+   background-color: $color-grey-light-2;
+   box-shadow: $default-box-shadow;
+   height: 17vh;
+   z-index: 2000;
+   width: 100%;
+   margin-left: -3rem;
+   display: flex;
+   align-items: center;
+   padding-left: 5rem;
+}

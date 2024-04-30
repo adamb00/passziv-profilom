@@ -1,0 +1,21 @@
+.project {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-bottom: 5rem;
+
+   @include respond(tab-port) {
+      margin-top: 2rem;
+   }
+
+   &__desc {
+      margin: 5rem 0;
+      padding: 5rem;
+      color: $color-grey-light-2;
+      border-radius: $default-border-radius;
+      box-shadow: $default-box-shadow-green;
+      background-color: $color-grey-light-2;
+      color: $color-grey-dark;
+   }
+}

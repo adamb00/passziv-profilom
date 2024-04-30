@@ -1,0 +1,58 @@
+.projects {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5rem;
+   margin: 10rem 0;
+
+   &__project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem;
+      background-color: $color-grey-light-2;
+      box-shadow: $default-box-shadow-green;
+      border-radius: $default-border-radius;
+   }
+
+   &__desc {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 4rem;
+
+      @include respond(phone) {
+         flex-direction: column;
+         gap: 2rem;
+      }
+   }
+
+   &__list {
+      list-style-type: none;
+      gap: 5rem;
+      display: flex;
+      flex-direction: column;
+
+      @include respond(tab-port) {
+         gap: 4rem;
+      }
+      @include respond(phone) {
+         gap: 1.4rem;
+         margin-left: 2rem;
+      }
+   }
+   &__item {
+      font-size: $default-font-size;
+   }
+
+   &__image {
+      cursor: pointer;
+      border-radius: $default-border-radius;
+      @include respond(phone) {
+         max-width: 380px;
+      }
+   }
+}
