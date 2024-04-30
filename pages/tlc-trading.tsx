@@ -7,6 +7,7 @@ export default function TLCtrading() {
          <Link href='https://app.tlctrading.ai/register/galamb65' target='_blank'>
             <h2 className='heading-secondary'>Tlc Trading AI.</h2>
          </Link>
+         <p className='paragraph'>test</p>
       </div>
    );
 }
