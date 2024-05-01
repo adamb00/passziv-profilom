@@ -7,8 +7,7 @@ export default function Header() {
    return (
       <header className='header'>
          <div>
-            <h1 className='heading-primary heading-primary--sub'>Ne gyorsan akarj meggazdagodni</h1>
-            <h2 className='heading-primary heading-primary--main'>hanem nagyon!</h2>
+            <h2 className='heading-primary heading-primary--main'>A pénz a kitartás fáján nő</h2>
          </div>
          <button className='btn btn--white btn--animated' onClick={() => router.push('/projects')}>
             Projektek

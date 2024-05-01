@@ -17,5 +17,10 @@
       box-shadow: $default-box-shadow-green;
       background-color: $color-grey-light-2;
       color: $color-grey-dark;
+
+      @include respond(phone) {
+         margin: 5rem 2rem;
+         padding: 1rem;
+      }
    }
 }

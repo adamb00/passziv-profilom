@@ -22,7 +22,7 @@ export default function Pooolse() {
             <p className='paragraph'>
                A Pooolse NFT-k értékét teljes egészében a profi kereskedők által beállított, szintén díjnyertes
                Tradensea motorja növeli a megvásárolt NFT-k összegével történő automatikus kereskedések révén addig,
-               amíg az NFT értékének a háromszorosát el nem éri - a{' '}
+               amíg az NFT értékének a háromszorosát el nem éri - a
                <strong className='strong'> napi hozam naponta kerül kifizetésre </strong> a Pooolse felhasználóinak.
             </p>
             <p className='paragraph'>

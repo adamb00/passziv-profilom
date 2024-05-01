@@ -6,14 +6,18 @@
       margin-top: 5rem;
       padding: 0 2rem;
    }
+   @include respond(phone) {
+      margin-top: 0;
+   }
 
    &__list {
+      margin-top: 10rem;
       list-style-type: none;
    }
    &__item {
       display: flex;
       flex-direction: column;
-      margin-bottom: 2rem;
+      gap: 3rem;
 
       &--header {
          display: flex;

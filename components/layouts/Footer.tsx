@@ -7,15 +7,21 @@ export default function Footer() {
    const { control, handleSubmit, reset } = useForm();
    const { isCreating, createSubscription } = useCreateSubscription();
    const handleOnSubmit = async (data: FieldValues) => {
-      console.log(data);
-      createSubscription(
-         { ...data },
-         {
-            onSuccess: () => {
-               reset();
-            },
-         }
-      );
+      // createSubscription(
+      //    { ...data },
+      //    {
+      //       onSuccess: () => {
+      //          reset();
+      //       },
+      //    }
+      // );
+      try {
+         const res = await fetch('/api/emails', { method: 'POST', body: JSON.stringify({ ...data }) });
+         const response = await res.json();
+         console.log(response);
+      } catch (err) {
+         console.log(err);
+      }
    };
    return (
       <footer className='footer'>
