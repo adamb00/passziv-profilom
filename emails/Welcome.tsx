@@ -11,7 +11,9 @@ const Welcome = ({ name = 'Adam' }: WelcomeProps) => (
       <Preview>A pénz a kitartás fáján nő.</Preview>
       <Body style={main}>
          <Container style={container}>
-            <Text style={heading}>Üdvözlünk {name},</Text>
+            <Text style={heading}>
+               Üdvözlünk <br /> {name}!
+            </Text>
             <Hr style={hr} />
 
             <Section style={btnContainer}>
