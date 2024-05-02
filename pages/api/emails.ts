@@ -13,6 +13,5 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
       react: Welcome({ name }),
    });
 
-   console.log(response);
    res.status(200).json({ status: 'success' });
 }
