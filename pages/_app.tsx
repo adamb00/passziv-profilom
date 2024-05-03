@@ -5,6 +5,7 @@ import Layout from '@/components/layouts/Layout';
 import Navigation from '@/components/molecules/Navigation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
+import { appWithTranslation } from 'next-i18next';
 
 const queryClient = new QueryClient({
    defaultOptions: {
@@ -48,4 +49,4 @@ const App = ({ Component, pageProps }: AppProps) => {
    );
 };
 
-export default App;
+export default appWithTranslation(App);

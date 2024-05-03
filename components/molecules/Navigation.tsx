@@ -42,8 +42,6 @@ export default function Navigation() {
                         url='https://www.facebook.com/groups/771466154955044'
                         target='_blank'
                      />
-                     <SocialIcon network='telegram' url='https://t.me/+XkPfDVZJO4xhZDZkx' target='_blank' />
-                     <SocialIcon network='linktree' url='https://linktr.ee/passzivprofilom' target='_blank' />
                   </div>
                </li>
             </ul>

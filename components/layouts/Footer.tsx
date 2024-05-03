@@ -2,10 +2,12 @@ import { FieldValues, useForm } from 'react-hook-form';
 import UserInput from '../atoms/UserInput';
 
 import { useCreateSubscription } from '@/hooks/useSubscribe';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
    const { control, handleSubmit, reset } = useForm();
    const { isCreating, createSubscription } = useCreateSubscription();
+   const { t } = useTranslation();
    const handleOnSubmit = async (data: FieldValues) => {
       createSubscription(
          { ...data },
@@ -45,7 +47,7 @@ export default function Footer() {
             />
 
             <button disabled={isCreating} className='btn btn--animated btn--orange' type='submit'>
-               Kezdjük el!
+               {t('Kezdjük el!')}
             </button>
          </form>
       </footer>
