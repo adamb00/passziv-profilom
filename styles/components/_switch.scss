@@ -9,13 +9,13 @@
    height: 2em;
 
    @include respond(tab-port) {
-      top: 6rem;
-      right: 6rem;
+      top: 5.5rem;
+      right: 12rem;
    }
 
    @include respond(phone) {
-      top: 4rem;
-      right: 4rem;
+      top: 5rem;
+      right: 12rem;
    }
 }
 

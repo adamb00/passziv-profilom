@@ -8,9 +8,8 @@ export default function Header() {
    const { t } = useTranslation();
    return (
       <header className='header'>
-         <div>
-            <h2 className='heading-primary heading-primary--main'>{t('A pénz a kitartás fáján nő')}</h2>
-         </div>
+         <h2 className='heading-primary heading-primary--main'>{t('A pénz a kitartás fáján nő')}</h2>
+
          <button className='btn btn--white btn--animated' onClick={() => router.push('/projects')}>
             {t('Projektek')}
          </button>
