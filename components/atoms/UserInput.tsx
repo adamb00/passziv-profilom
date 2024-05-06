@@ -32,6 +32,7 @@ export default function UserInput({ control, name, label, placeholder, rules }: 
                />
                {error && (
                   <p className='user-input__error'>{error.message || 'Something went wrong. Please try again.'}</p>
+                  // TODO TRANSLATE THIS
                )}
             </div>
          )}

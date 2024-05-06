@@ -1,27 +1,18 @@
 import { useEffect, useState } from 'react';
 import FeatureBox from './FeatureBox';
+import { useFetchBoxes } from '@/hooks/useFetchBoxes';
+import { getCookie } from 'cookies-next';
 
 export default function Features() {
-   const [boxes, setBoxes] = useState([]);
+   const cookie = getCookie('i18next') as string;
+   const { boxes } = useFetchBoxes(cookie);
 
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await fetch('/boxData.json');
-            const data = await response.json();
-            setBoxes(data);
-         } catch (error) {
-            console.error('Error fetching data:', error);
-         }
-      };
-
-      fetchData();
-   }, []);
+   if (!boxes) return;
 
    return (
       <div className='features'>
          <div className='features__row'>
-            {boxes.map((box: { title: string; content: string }, index) => (
+            {boxes.map((box: { title: string; content: string }, index: number) => (
                <FeatureBox key={index} title={box.title}>
                   {box.content}
                </FeatureBox>

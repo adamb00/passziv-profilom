@@ -5,7 +5,12 @@ import Layout from '@/components/layouts/Layout';
 import Navigation from '@/components/molecules/Navigation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
-import { appWithTranslation } from 'next-i18next';
+import Switch from '@/components/molecules/Switch';
+
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 
 const queryClient = new QueryClient({
    defaultOptions: {
@@ -15,13 +20,32 @@ const queryClient = new QueryClient({
    },
 });
 
+i18n
+   .use(initReactI18next)
+   .use(LanguageDetector)
+   .use(HttpApi)
+   .init({
+      supportedLngs: ['en', 'hu'],
+      fallbackLng: 'hu',
+      detection: {
+         order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+         caches: ['cookie', 'localStorage'],
+      },
+      backend: {
+         loadPath: '/locales/{{lng}}/translation.json',
+      },
+      react: { useSuspense: false },
+   });
+
 const App = ({ Component, pageProps }: AppProps) => {
    return (
       <QueryClientProvider client={queryClient}>
          <Layout>
             <Component {...pageProps} />
+            <Switch />
             <Navigation />
          </Layout>
+
          <Toaster
             position='top-center'
             gutter={12}
@@ -49,4 +73,4 @@ const App = ({ Component, pageProps }: AppProps) => {
    );
 };
 
-export default appWithTranslation(App);
+export default App;

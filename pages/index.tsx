@@ -1,5 +1,6 @@
 import Header from '@/components/layouts/Header';
 import Features from '@/components/organisms/Home/Features';
+import Introduction from '@/components/organisms/Home/Introduction';
 import Invest from '@/components/organisms/Home/Invest';
 import Now from '@/components/organisms/Home/Now';
 import Slogan from '@/components/organisms/Home/Slogan';
@@ -11,6 +12,7 @@ const Home = () => {
       <div className='home'>
          <Header />
          <Video />
+         <Introduction />
          <Invest />
          <Features />
          <Now />

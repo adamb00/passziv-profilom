@@ -1,8 +1,10 @@
 import { closeMenu } from '@/utils/helpers';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { SocialIcon } from 'react-social-icons';
 
 export default function Navigation() {
+   const { t } = useTranslation();
    return (
       <div className='navigation'>
          <input type='checkbox' name='' id='navi-toggle' className='navigation__checkbox' />
@@ -12,17 +14,17 @@ export default function Navigation() {
          <div className='navigation__background'>&nbsp;</div>
          <div className='navigation__nav'>
             <div className='navigation__proverb'>
-               Egy befektető élete <br /> <br />
-               Első év: Azt mondják, hogy túl kockázatos <br />
-               Második év: Azt mondják, hogy hazárdőr <br />
-               Harmadik év: Azt mondják, hogy csak vesztegeted az idődet <br />
-               Ötödik év: Azt mondják, hogy szerencséd volt <br />
-               Tizedik év: Megkérnek, hogy segíts nekik
+               {t('Egy befektető élete')} <br /> <br />
+               {t('Első év: Azt mondják, hogy túl kockázatos')} <br />
+               {t('Második év: Azt mondják, hogy hazárdőr')} <br />
+               {t('Harmadik év: Azt mondják, hogy csak vesztegeted az idődet')} <br />
+               {t('Ötödik év: Azt mondják, hogy szerencséd volt')} <br />
+               {t('Tizedik év: Megkérnek, hogy segíts nekik')}
             </div>
             <ul className='navigation__list'>
                <li className='navigation__item'>
                   <Link onClick={() => closeMenu()} href='/' className='navigation__link'>
-                     Kezdőlap
+                     {t('Kezdőlap')}
                   </Link>
                </li>
                <li className='navigation__item'>

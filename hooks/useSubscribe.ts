@@ -15,5 +15,7 @@ export const useCreateSubscription = () => {
       onError: err => toast.error(err.message || 'Valami hiba történt! 🤯'),
    });
 
+   //TODO TRANSLATE THIS
+
    return { createSubscription, isCreating };
 };

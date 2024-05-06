@@ -1,8 +1,9 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 export default function Pooolse() {
    const router = useRouter();
+   const { t } = useTranslation();
 
    return (
       <div className='projects__project'>
@@ -14,15 +15,15 @@ export default function Pooolse() {
                <img loading='lazy' src='/pooolse-md.jpg' alt='Pooolse' />
             </picture>
             <ul className='projects__list'>
-               <li className='projects__item'>Folyamatosan fejlődő magyar vállalkozás </li>
-               <li className='projects__item'>Saját fejlesztésű robotokkal való kereskedés</li>
-               <li className='projects__item'>Nyilvánosság előtt magukat vállaló tulajdonosok</li>
-               <li className='projects__item'>Több nemzetközi díj</li>
-               <li className='projects__item'>7% átlagos havi bónusz</li>
+               <li className='projects__item'>{t('Folyamatosan fejlődő magyar vállalkozás')} </li>
+               <li className='projects__item'>{t('Saját fejlesztésű robotokkal való kereskedés')}</li>
+               <li className='projects__item'>{t('Nyilvánosság előtt magukat vállaló tulajdonosok')}</li>
+               <li className='projects__item'>{t('Több nemzetközi díj')}</li>
+               <li className='projects__item'>{t('7% átlagos havi bónusz')}</li>
             </ul>
          </div>
          <button className='btn btn--orange' onClick={() => router.push('/pooolse')}>
-            Érdekel
+            {t('Érdekel')}
          </button>
       </div>
    );

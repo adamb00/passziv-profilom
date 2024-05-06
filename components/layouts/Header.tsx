@@ -1,16 +1,18 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
    const router = useRouter();
+   const { t } = useTranslation();
    return (
       <header className='header'>
          <div>
-            <h2 className='heading-primary heading-primary--main'>A pénz a kitartás fáján nő</h2>
+            <h2 className='heading-primary heading-primary--main'>{t('A pénz a kitartás fáján nő')}</h2>
          </div>
          <button className='btn btn--white btn--animated' onClick={() => router.push('/projects')}>
-            Projektek
+            {t('Projektek')}
          </button>
       </header>
    );
