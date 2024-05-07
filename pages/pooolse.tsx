@@ -36,10 +36,18 @@ export default function Pooolse() {
                )}
             </p>
          </div>
-
          <Link href='https://app.pooolse.com/join/9232' target='_blank'>
             <button className='btn btn--animated btn--green'>{t('Kezdjük el most!')}</button>
          </Link>
+
+         <div className='project__video'>
+            <video className='project__video--content' controls preload='preload' id='pooolse'>
+               <source
+                  src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/pooolse.mp4?t=2024-05-07T06%3A33%3A04.454Z'
+                  type='video/mp4'
+               />
+            </video>
+         </div>
       </div>
    );
 }

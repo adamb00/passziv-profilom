@@ -36,9 +36,19 @@ export default function TLCtrading() {
                )}
             </p>
          </div>
+
          <Link href='https://app.tlctrading.ai/register/galamb65' target='_blank'>
             <button className='btn btn--animated btn--green'>{t('Kezdjük el most!')}</button>
          </Link>
+
+         <div className='project__video'>
+            <video className='project__video--content' controls preload='preload' id='tlc'>
+               <source
+                  src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC.mp4?t=2024-05-07T06%3A34%3A02.330Z'
+                  type='video/mp4'
+               />
+            </video>
+         </div>
       </div>
    );
 }

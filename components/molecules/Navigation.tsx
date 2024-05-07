@@ -38,6 +38,16 @@ export default function Navigation() {
                   </Link>
                </li>
                <li className='navigation__item'>
+                  <Link
+                     onClick={() => closeMenu()}
+                     href='https://drive.google.com/drive/folders/13boqiY0rrrsjtLcNnFpfxPOrVwIGVK5g?usp=share_link'
+                     target='_blank'
+                     className='navigation__link'
+                  >
+                     {t('Érdekességek')}
+                  </Link>
+               </li>
+               <li className='navigation__item'>
                   <div className='navigation__social'>
                      <SocialIcon
                         network='facebook'

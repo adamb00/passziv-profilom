@@ -23,4 +23,25 @@
          padding: 1rem;
       }
    }
+
+   &__video {
+      cursor: pointer;
+      margin: 5rem;
+
+      &--content {
+         height: 72rem;
+         width: auto;
+         border: 1px solid $color-grey-light-2;
+
+         @include respond(tab-land) {
+            height: 60rem;
+         }
+         @include respond(tab-port) {
+            height: 44rem;
+         }
+         @include respond(phone) {
+            height: 20rem;
+         }
+      }
+   }
 }
