@@ -130,7 +130,7 @@ const btnContainer = {
 };
 
 const button: React.CSSProperties = {
-   backgroundImage: 'linear-gradient(to right bottom,#7ed56f, #28b485)',
+   backgroundColor: '#7ed56f',
    letterSpacing: '0.1rem',
    borderRadius: '3px',
    color: '#f7f7f7',
@@ -151,7 +151,7 @@ const heading: React.CSSProperties = {
    textTransform: 'uppercase',
    fontSize: '1.6rem',
    letterSpacing: '0.2rem',
-   backgroundImage: 'linear-gradient(to right bottom,#7ed56f, #28b485)',
+   backgroundColor: '#7ed56f',
    padding: '1rem',
    borderRadius: '0.2rem',
    color: '#f7f7f7',
@@ -159,17 +159,13 @@ const heading: React.CSSProperties = {
 const heading__secondary: React.CSSProperties = {
    textTransform: 'uppercase',
    textAlign: 'center',
-   backgroundClip: 'text',
-   backgroundImage: 'linear-gradient(to right, #7ed56f, #28b485)',
-   color: 'transparent',
+   color: '#7ed56f',
    fontSize: '2rem',
 };
 const heading__tertiary: React.CSSProperties = {
    textTransform: 'uppercase',
    textAlign: 'center',
-   backgroundClip: 'text',
-   backgroundImage: 'linear-gradient(to right, #ffb900, #ff7730)',
-   color: 'transparent',
+   color: '#ffb900',
    fontSize: '2=1.6rem',
 };
 
