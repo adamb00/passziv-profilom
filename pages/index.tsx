@@ -17,7 +17,10 @@ const Home = () => {
          <Invest />
          <Features />
          <Now />
-         <Slogan />
+         <Slogan
+            writer='Gárdonyi Géza'
+            slogan={'A pénz okos embernek: zsebben ülő szolga.\nAz oktalan embernek: zsebben ülő úr.'}
+         />
          {/* <Books /> */}
       </div>
    );

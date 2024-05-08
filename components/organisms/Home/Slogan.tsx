@@ -1,12 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function Slogan() {
+interface SloganProps {
+   slogan: string;
+   writer: string;
+}
+
+export default function Slogan({ slogan, writer }: SloganProps) {
+   const lines = slogan.split('\n');
    const { t } = useTranslation();
    return (
       <div className='slogan'>
-         {t('A pénz okos embernek: zsebben ülő szolga.')} <br /> {t('Az oktalan embernek: zsebben ülő úr.')} <br />
-         <span className='green'>Gárdonyi Géza</span>
+         {lines.map((line, index) => (
+            <div key={index}>
+               <p>{t(line)}</p>
+            </div>
+         ))}
+         <p className='green'>{writer}</p>
       </div>
    );
 }

@@ -6,9 +6,10 @@ interface UserInputProps extends ComponentPropsWithoutRef<'input'> {
    control: Control;
    label: string;
    rules: RegisterOptions;
+   color?: string;
 }
 
-export default function UserInput({ control, name, label, placeholder, rules }: UserInputProps) {
+export default function UserInput({ control, name, label, placeholder, rules, color }: UserInputProps) {
    return (
       <Controller
          control={control}
@@ -16,7 +17,7 @@ export default function UserInput({ control, name, label, placeholder, rules }: 
          rules={rules}
          render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
             <div className='user-input'>
-               <label htmlFor={name} className='user-input__label'>
+               <label htmlFor={name} className='user-input__label' style={{ color }}>
                   {label}
                </label>
                <input

@@ -48,19 +48,15 @@ export default function Navigation() {
                   </Link>
                </li>
                <li className='navigation__itam'>
+                  <Link onClick={() => closeMenu()} href='/compound-interest' className='navigation__link'>
+                     {t('Kamatos kamat számláló')}
+                  </Link>
+               </li>
+               <li className='navigation__itam'>
                   <Link onClick={() => closeMenu()} href='/#availability' className='navigation__link'>
                      {t('Elérhetőségeink')}
                   </Link>
                </li>
-               {/* <li className='navigation__item'>
-                  <div className='navigation__social'>
-                     <SocialIcon
-                        network='facebook'
-                        url='https://www.facebook.com/groups/771466154955044'
-                        target='_blank'
-                     />
-                  </div>
-               </li> */}
             </ul>
          </div>
       </div>
