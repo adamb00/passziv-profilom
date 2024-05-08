@@ -44,10 +44,15 @@ export default function Navigation() {
                      target='_blank'
                      className='navigation__link'
                   >
-                     {t('Érdekességek')}
+                     {t('Hasznos videók')}
                   </Link>
                </li>
-               <li className='navigation__item'>
+               <li className='navigation__itam'>
+                  <Link onClick={() => closeMenu()} href='/#availability' className='navigation__link'>
+                     {t('Elérhetőségeink')}
+                  </Link>
+               </li>
+               {/* <li className='navigation__item'>
                   <div className='navigation__social'>
                      <SocialIcon
                         network='facebook'
@@ -55,7 +60,7 @@ export default function Navigation() {
                         target='_blank'
                      />
                   </div>
-               </li>
+               </li> */}
             </ul>
          </div>
       </div>

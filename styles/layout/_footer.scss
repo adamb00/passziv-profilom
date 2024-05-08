@@ -1,7 +1,7 @@
 .footer {
    color: $color-grey-light-1;
    background-color: $color-grey-dark-3;
-   padding: 4rem 0;
+   padding: 4rem 0 0 0;
    font-size: 1.4rem;
 
    &__form {
@@ -9,5 +9,20 @@
       flex-direction: column;
       gap: 2rem;
       align-items: center;
+   }
+
+   &__availability {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      font-size: $default-font-size;
+      padding: 2rem 4rem;
+   }
+
+   &__social-icon {
+      width: 40px !important;
+      height: 40px !important;
    }
 }

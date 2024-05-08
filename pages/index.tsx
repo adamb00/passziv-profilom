@@ -1,4 +1,5 @@
 import Header from '@/components/layouts/Header';
+import Books from '@/components/organisms/Home/Books';
 import Features from '@/components/organisms/Home/Features';
 import Introduction from '@/components/organisms/Home/Introduction';
 import Invest from '@/components/organisms/Home/Invest';
@@ -17,6 +18,7 @@ const Home = () => {
          <Features />
          <Now />
          <Slogan />
+         {/* <Books /> */}
       </div>
    );
 };
