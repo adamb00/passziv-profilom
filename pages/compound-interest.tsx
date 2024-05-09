@@ -26,12 +26,12 @@ export default function CompoundInterestCalculator() {
       cookie === 'en' && compound && compound !== 0
          ? `The invested capital ( ${formatNumberWithCommas(
               +x
-           )}$ ) with ${P}% interest rate after ${n} months will be <span class='green'>${formatNumberWithCommas(
+           )}$ ) with ${P}% interest rate after ${n} months will be <br /><span class='green'>${formatNumberWithCommas(
               +compound.toFixed(0)
            )}$</span>.`
          : cookie === 'hu' && compound && compound !== 0
          ? ` A befektett tőke ( ${formatNumberWithCommas(+x)}$ ) ${P}% kamathozammal ${n} hónap után 
-            <span class='green green__compound'>${formatNumberWithCommas(+compound.toFixed(0))}$</span>`
+            <br /><span class='green green__compound'>${formatNumberWithCommas(+compound.toFixed(0))}$</span>`
          : '';
 
    return (

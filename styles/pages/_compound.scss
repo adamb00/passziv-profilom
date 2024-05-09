@@ -27,7 +27,7 @@
       }
       @include respond(phone) {
          margin-top: 5rem;
-         width: 98vw;
+         width: 90vw;
          border-radius: $default-border-radius;
       }
    }
