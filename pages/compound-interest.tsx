@@ -20,7 +20,7 @@ export default function CompoundInterestCalculator() {
    const slogan = t('A kamatos kamat a világ nyolcadik csodája.\n Az, aki megérti, kapja… aki nem, az megfizeti.');
    const handleOnSubmit = async (data: FieldValues) => {
       const { x, P, n } = data;
-      setCompound(+x * Math.pow(1 + +P / 12 / 100, +n * 10));
+      setCompound(Math.floor(+x * Math.pow(1 + +P / 100, +n)));
    };
    const compoundCalculated =
       cookie === 'en' && compound && compound !== 0
