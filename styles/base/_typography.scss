@@ -110,4 +110,11 @@
 }
 .green {
    color: $color-primary-dark;
+   &__compound {
+      font-size: 2rem;
+      background-color: $color-grey-light-1;
+      border-radius: $default-border-radius;
+      padding: 0.8rem;
+      box-shadow: $default-box-shadow-green;
+   }
 }

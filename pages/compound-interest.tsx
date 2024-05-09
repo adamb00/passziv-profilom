@@ -31,7 +31,7 @@ export default function CompoundInterestCalculator() {
            )}$</span>.`
          : cookie === 'hu' && compound && compound !== 0
          ? ` A befektett tőke ( ${formatNumberWithCommas(+x)}$ ) ${P}% kamathozammal ${n} hónap után 
-            <span class='green'>${formatNumberWithCommas(+compound.toFixed(0))}$</span> lesz.`
+            <span class='green green__compound'>${formatNumberWithCommas(+compound.toFixed(0))}$</span>`
          : '';
 
    return (
