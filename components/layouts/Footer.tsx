@@ -20,7 +20,10 @@ export default function Footer() {
             onSuccess: async () => {
                reset();
                try {
-                  await fetch('/api/emails', { method: 'POST', body: JSON.stringify({ ...data }) });
+                  await fetch('/api/emails', {
+                     method: 'POST',
+                     body: JSON.stringify({ ...data, lang: document.documentElement.lang }),
+                  });
                } catch (err) {
                   console.log(err);
                }
@@ -79,6 +82,17 @@ export default function Footer() {
                className='footer__social-icon'
                rel='noreferrer noopener'
             />
+         </div>
+         <div className='footer__warning'>
+            {t(
+               '‼️ A pénzügyi piacokon folytatott kereskedés jelentős kockázatokkal jár, és nyereséget és veszteséget is hozhat. ‼️'
+            )}
+            <br />
+            {t(
+               '‼️ A múltbeli kereskedési teljesítmény nem garantálja a jövőbeli sikeres kereskedéseket. Ez az információ csak oktatási és tájékoztatási célokat szolgál, és nem minősül egyéni befektetési tanácsadásnak. ‼️'
+            )}
+            <br />
+            {t('‼️ Kizárólag Ön felelős a tetteiért és döntéseiért, amikor ezeket az információkat használja ‼️')}
          </div>
       </footer>
    );

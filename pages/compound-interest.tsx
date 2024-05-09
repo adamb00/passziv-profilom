@@ -2,36 +2,55 @@ import UserInput from '@/components/atoms/UserInput';
 import CompoundList from '@/components/organisms/Compound/CompoundList';
 import Slogan from '@/components/organisms/Home/Slogan';
 import { formatNumberWithCommas, numberPattern } from '@/utils/helpers';
+import { getCookie } from 'cookies-next';
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 export default function CompoundInterestCalculator() {
    const { control, handleSubmit, watch } = useForm();
+   const cookie = getCookie('i18next');
+   const { t } = useTranslation();
+   const { x, P, n } = watch();
    const [compound, setCompound] = useState<number>();
+   const message = t('Kérjük, csak számokat adjon meg');
+   const assetRequired = t('Kérjük add meg a befektetett tőkéd értékét');
+   const interestRequired = t('Kérjük add meg a kamat értékét');
+   const prediodRequired = t('Kérjük add meg a vizsgált időszakot');
+   const slogan = t('A kamatos kamat a világ nyolcadik csodája.\n Az, aki megérti, kapja… aki nem, az megfizeti.');
    const handleOnSubmit = async (data: FieldValues) => {
       const { x, P, n } = data;
       setCompound(+x * Math.pow(1 + +P / 12 / 100, +n * 10));
    };
-
-   const { x, P, n } = watch();
+   const compoundCalculated =
+      cookie === 'en' && compound && compound !== 0
+         ? `The invested capital ( ${formatNumberWithCommas(
+              +x
+           )}$ ) with ${P}% interest rate after ${n} months will be <span class='green'>${formatNumberWithCommas(
+              +compound.toFixed(0)
+           )}$</span>.`
+         : cookie === 'hu' && compound && compound !== 0
+         ? ` A befektett tőke ( ${formatNumberWithCommas(+x)}$ ) ${P}% kamathozammal ${n} hónap után 
+            <span class='green'>${formatNumberWithCommas(+compound.toFixed(0))}$</span> lesz.`
+         : '';
 
    return (
       <div className='compound'>
-         <h2 className='heading-secondary'>Kamatos kamat kalkulátor</h2>
+         <h2 className='heading-secondary'>{t('Kamatos kamat kalkulátor')}</h2>
          <form className='compound__form' id='compound__form' onSubmit={handleSubmit(handleOnSubmit)}>
-            <h3 className='headig-tertiary'>Kamatos kamat számítás</h3>
+            <h3 className='headig-tertiary'>{t('Kamatos kamat számítás')}</h3>
             <UserInput
                id='x'
                control={control}
                name='x'
-               label='Befektett tőke értéke dollárban'
-               placeholder='Tőke'
+               label={t('Befektett tőke értéke dollárban')}
+               placeholder={t('Tőke')}
                color='#777'
                rules={{
-                  required: 'Kérjük add meg a befektetett tőkéd értékét',
+                  required: assetRequired,
                   pattern: {
                      value: numberPattern,
-                     message: 'Kérjük, csak számokat adjon meg',
+                     message,
                   },
                }}
             />
@@ -39,14 +58,14 @@ export default function CompoundInterestCalculator() {
                id='P'
                control={control}
                name='P'
-               label='Kamat százalék értéke'
-               placeholder='Kamat'
+               label={t('Kamat százalék értéke')}
+               placeholder={t('Kamat')}
                color='#777'
                rules={{
-                  required: 'Kérjük add meg a kamat értékét',
+                  required: interestRequired,
                   pattern: {
                      value: numberPattern,
-                     message: 'Kérjük, csak számokat adjon meg',
+                     message,
                   },
                }}
             />
@@ -55,35 +74,29 @@ export default function CompoundInterestCalculator() {
                color='#777'
                control={control}
                name='n'
-               label='Vizsgált időszak hónapokban'
-               placeholder='Időszak'
+               label={t('Vizsgált időszak hónapokban')}
+               placeholder={t('Időszak')}
                rules={{
-                  required: 'Kérjük add meg a vizsgált időszakot',
+                  required: prediodRequired,
                   pattern: {
                      value: numberPattern,
-                     message: 'Kérjük, csak számokat adjon meg',
+                     message,
                   },
                }}
             />
 
             <button className='btn btn--green btn--animated' type='submit'>
-               Számítás
+               {t('Számítás')}
             </button>
 
             {compound && compound !== 0 && (
-               <p className='compound__income'>
-                  A befektett tőke ( {formatNumberWithCommas(+x)}$ ) {P}% kamathozammal {n} hónap után{' '}
-                  <span className='green'>{formatNumberWithCommas(+compound.toFixed(0))}$</span> lesz.
-               </p>
+               <p className='compound__income' dangerouslySetInnerHTML={{ __html: compoundCalculated }}></p>
             )}
          </form>
 
          <CompoundList />
 
-         <Slogan
-            writer='Albert Einstein'
-            slogan={'A kamatos kamat a világ nyolcadik csodája.\n Az, aki megérti, kapja… aki nem, az megfizeti.'}
-         />
+         <Slogan writer='Albert Einstein' slogan={slogan} />
       </div>
    );
 }

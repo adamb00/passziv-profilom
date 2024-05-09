@@ -12,6 +12,7 @@ export default function Switch() {
       const newLanguage = e.target.checked ? 'en' : 'hu';
       i18n.changeLanguage(newLanguage);
       setLang(newLanguage);
+      document.documentElement.lang = newLanguage;
 
       try {
          const response = await fetch(`/boxData.${newLanguage}.json`);

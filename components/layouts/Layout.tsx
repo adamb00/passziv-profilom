@@ -13,6 +13,7 @@ const Layout = ({ children }: PropsWithChildren) => {
                name='description'
                content='Passziv Profilom is a platform for passive income generation through various investment opportunities. Learn more about how you can grow your wealth effortlessly.'
             />
+            <link rel='icon' href='/favicon.png' />
             <title>{t('Passziv Profilom')}</title>
          </Head>
          {children}

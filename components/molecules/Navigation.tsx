@@ -49,7 +49,7 @@ export default function Navigation() {
                </li>
                <li className='navigation__itam'>
                   <Link onClick={() => closeMenu()} href='/compound-interest' className='navigation__link'>
-                     {t('Kamatos kamat számláló')}
+                     {t('Kamatos kamat kalkulátor')}
                   </Link>
                </li>
                <li className='navigation__itam'>
