@@ -74,6 +74,15 @@
          font-size: 2.4rem;
       }
    }
+
+   &--left {
+      text-align: left;
+      font-size: 2.8rem;
+
+      @include respond(phone) {
+         text-align: center;
+      }
+   }
 }
 
 .heading-tertiary {

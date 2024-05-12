@@ -1,5 +1,6 @@
 @import './abstract/mixins';
 @import './abstract/variables';
+@import './abstract/utilities';
 
 @import './base/base';
 @import './base/typography';
@@ -25,3 +26,4 @@
 @import './pages/home';
 @import './pages/projects';
 @import './pages/compound';
+@import './pages/blog';

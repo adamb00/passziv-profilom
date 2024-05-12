@@ -13,15 +13,12 @@ export default function Navigation() {
          </label>
          <div className='navigation__background'>&nbsp;</div>
          <div className='navigation__nav'>
-            <div className='navigation__proverb'>
-               {t('Egy befektető élete')} <br /> <br />
-               {t('Első év: Azt mondják, hogy túl kockázatos')} <br />
-               {t('Második év: Azt mondják, hogy hazárdőr')} <br />
-               {t('Harmadik év: Azt mondják, hogy csak vesztegeted az idődet')} <br />
-               {t('Ötödik év: Azt mondják, hogy szerencséd volt')} <br />
-               {t('Tizedik év: Megkérnek, hogy segíts nekik')}
-            </div>
             <ul className='navigation__list'>
+               <li className='navigation__itam'>
+                  <Link onClick={() => closeMenu()} href='/blog' className='navigation__link'>
+                     Blog
+                  </Link>
+               </li>
                <li className='navigation__item'>
                   <Link onClick={() => closeMenu()} href='/' className='navigation__link'>
                      {t('Kezdőlap')}

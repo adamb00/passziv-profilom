@@ -1,7 +1,0 @@
-{
-   "rewrites": [
-      { "source": "/create-blog", "destination": "https://admin.passzivprofilom.com/" },
-      { "source": "/", "destination": "https://passzivprofilom.com/" },
-      { "source": "/:match*", "destination": "https://passzivprofilom.com/:match*" }
-   ]
-}

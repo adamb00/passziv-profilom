@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getCookie } from 'cookies-next';
 import { useFetchBoxes } from '@/hooks/useFetchBoxes';
+import { useRouter } from 'next/router';
 
 export default function Switch() {
    const { i18n } = useTranslation();
    const [lang, setLang] = useState(getCookie('i18next') as string);
    const { setBoxes } = useFetchBoxes(lang);
+   const router = useRouter();
+
+   if (router.asPath.includes('/blog')) return;
 
    const handleOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
       const newLanguage = e.target.checked ? 'en' : 'hu';

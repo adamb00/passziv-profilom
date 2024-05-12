@@ -1,0 +1,24 @@
+.text-2xl {
+   font-size: 3rem;
+}
+
+.font-bold {
+   font-weight: bold;
+}
+
+.text-primary-light {
+   color: $color-primary-light;
+}
+.list-disc {
+   list-style-type: disc;
+}
+.ml-5 {
+   margin-left: 5rem;
+}
+.w-full {
+   width: 100%;
+   margin: 2rem 0;
+}
+.rounded-md {
+   border-radius: $default-border-radius;
+}
