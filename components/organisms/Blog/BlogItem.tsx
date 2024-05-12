@@ -8,7 +8,7 @@ import { FacebookShareButton, FacebookMessengerShareButton, TwitterShareButton }
 export default function BlogItem({ blog }: { blog: IBlogPost }) {
    const { id, title, blog_post, created_at } = blog;
    const lang = getCookie('i18next');
-   const url = `http://192.168.0.33:3000/blog#${id}`;
+   const url = `https://passzivprofilom.com/blog#${id}`;
 
    return (
       <div id={id} className='blog__item'>
