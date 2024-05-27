@@ -22,3 +22,8 @@
 .rounded-md {
    border-radius: $default-border-radius;
 }
+.cursor-pointer {
+   cursor: pointer;
+   text-decoration: none;
+   color: inherit;
+}

@@ -19,7 +19,7 @@ export default function Pooolse() {
                <li className='projects__item'>{t('Saját fejlesztésű robotokkal való kereskedés')}</li>
                <li className='projects__item'>{t('Nyilvánosság előtt magukat vállaló tulajdonosok')}</li>
                <li className='projects__item'>{t('Több nemzetközi díj')}</li>
-               <li className='projects__item'>{t('7% átlagos havi bónusz')}</li>
+               <li className='projects__item'>{t('2-10% átlagos havi bónusz')}</li>
             </ul>
          </div>
          <button className='btn btn--orange' onClick={() => router.push('/pooolse')}>
