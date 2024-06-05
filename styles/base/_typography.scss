@@ -97,6 +97,22 @@
    &:not(:last-child) {
       margin-bottom: 3rem;
    }
+
+   &__alt {
+      &:not(:last-child) {
+         margin-bottom: 1rem;
+      }
+   }
+}
+
+.important {
+   margin: 3rem 0;
+   text-transform: uppercase;
+   font-size: 2.2rem;
+   background: -webkit-linear-gradient(left, $color-primary-light 20%, $color-primary-dark);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
 .strong {
@@ -127,5 +143,36 @@
 
       margin-top: 1rem;
       box-shadow: $default-box-shadow-green;
+   }
+}
+.link {
+   text-decoration: none;
+   font-size: 2rem;
+   cursor: pointer !important;
+
+   &:hover {
+      cursor: pointer !important;
+   }
+
+   &,
+   &:active,
+   &:focus,
+   &:visited,
+   &:link {
+      font-style: italic;
+      color: $color-tertiary-light;
+      cursor: pointer;
+   }
+
+   &--green {
+      &,
+      &:active,
+      &:focus,
+      &:visited,
+      &:link {
+         font-style: italic;
+         color: $color-primary-dark;
+         cursor: pointer;
+      }
    }
 }

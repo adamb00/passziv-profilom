@@ -44,4 +44,14 @@
          }
       }
    }
+
+   &__picture {
+      width: 90%;
+      margin: 5rem 0;
+   }
+
+   &__image {
+      width: 100%;
+      border-radius: $default-border-radius;
+   }
 }
