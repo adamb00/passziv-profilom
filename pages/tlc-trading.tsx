@@ -1,17 +1,14 @@
-import { getCookie } from 'cookies-next';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function TLCtrading() {
-   const { t } = useTranslation();
-   const cookie = getCookie('i18next') as string;
-   const lang = cookie && cookie.toLocaleUpperCase();
+   const { t, i18n } = useTranslation();
+   const lang = i18n.language;
    const video =
-      cookie === 'hu'
-         ? `https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC.mp4?t=2024-05-07T06%3A34%3A02.330Z`
-         : `https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4`;
+      lang === 'hu'
+         ? 'https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC.mp4?t=2024-05-07T06%3A34%3A02.330Z'
+         : 'https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4';
 
    return (
       <div className='project'>
@@ -78,14 +75,14 @@ export default function TLCtrading() {
          <picture className='project__picture'>
             <source
                srcSet={
-                  cookie === 'hu'
+                  lang === 'hu'
                      ? `/tlc-boss.png 320w, /tlc-boss.png 620w, /tlc-boss.png 1980w`
                      : `/tlc-boss-en.png 320w, /tlc-boss-en.png 620w, /tlc-boss-en.png 1980w`
                }
             />
             <img
                loading='lazy'
-               src={`/tlc-boss${cookie == 'en' ? '-en' : ''}.png`}
+               src={`/tlc-boss${lang == 'en' ? '-en' : ''}.png`}
                alt='TLC trading ai'
                className='project__image'
             />
@@ -110,14 +107,14 @@ export default function TLCtrading() {
          <picture className='project__picture'>
             <source
                srcSet={
-                  cookie === 'hu'
+                  lang === 'hu'
                      ? `/tlc-details.png 320w, /tlc-details.png 620w, /tlc-details.png 1980w`
                      : `/tlc-details-en.png 320w, /tlc-details-en.png 620w, /tlc-details-en.png 1980w`
                }
             />
             <img
                loading='lazy'
-               src={`/tlc-details${cookie == 'en' ? '-en' : ''}.png`}
+               src={`/tlc-details${lang == 'en' ? '-en' : ''}.png`}
                alt='TLC trading ai'
                className='project__image'
             />
@@ -127,7 +124,7 @@ export default function TLCtrading() {
             <Link
                className='link link--green'
                target='_blank'
-               href={`https://cdn.tlctrading.ai/presentations%2FAffiliate_${lang}.pdf`}
+               href={`https://cdn.tlctrading.ai/presentations%2FAffiliate_${lang && lang.toLocaleUpperCase()}.pdf`}
             >
                {t('Hivatalos prezentáció')}
             </Link>
