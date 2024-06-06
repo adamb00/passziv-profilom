@@ -5,10 +5,6 @@ import { useTranslation } from 'react-i18next';
 export default function TLCtrading() {
    const { t, i18n } = useTranslation();
    const lang = i18n.language;
-   const video =
-      lang === 'hu'
-         ? 'https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC.mp4?t=2024-05-07T06%3A34%3A02.330Z'
-         : 'https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4';
 
    return (
       <div className='project'>
@@ -49,7 +45,10 @@ export default function TLCtrading() {
 
          <div className='project__video'>
             <video className='project__video--content' controls preload='preload' id='tlc'>
-               <source src={video} type='video/mp4' />
+               <source
+                  src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4'
+                  type='video/mp4'
+               />
             </video>
          </div>
 
