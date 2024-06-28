@@ -46,7 +46,8 @@ export default function TLCtrading() {
          <div className='project__video'>
             <video className='project__video--content' controls preload='preload' id='tlc'>
                <source
-                  src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4'
+                  // src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_EN.mp4'
+                  src='https://fbfythyraexrdhlkdana.supabase.co/storage/v1/object/public/videos/TLC_HUN.mp4?t=2024-06-28T07%3A34%3A04.812Z'
                   type='video/mp4'
                />
             </video>
